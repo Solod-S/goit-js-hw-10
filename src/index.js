@@ -52,9 +52,10 @@ const CountriesApiServices = {
       (response) => {
         if (!response.ok) {
           Notify.failure("Oops, there is no country with that name");
-          // если не ок выводим ошибку
         }
+        // если не ок выводим ошибку
         return response.json();
+        // если ок парсим данные в json
       }
     );
   },
@@ -73,8 +74,9 @@ const CountriesApiServices = {
       // если нам возвращаеться массив вмещающий в себя более 10 объектов (стран), обрываем дальнейшие действия и выводим уведомление
       if (countries.length === 1) {
         this.clearList();
-        // this.info.innerHTML = generatingOneCountryInDom(countries[0]);
+        //чистим табло всех найденных стран
         this.info.innerHTML = this.countryMarkUp(countries[0]);
+        //генерируем разметку в табло главной странны
         return;
       }
       // если нам возвращаеться массив вмещающий в себя 1 объект(страну), чистим табло всех найденных стран
@@ -92,3 +94,5 @@ CountriesApiServices.searchBox.addEventListener(
     CountriesApiServices
   )
 );
+
+// слушатель событий на инпут + функция из библиотеки лодаш которая поможеть при болтливости (задержка в DEBOUNCE_DELAY)
