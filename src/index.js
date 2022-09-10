@@ -15,11 +15,11 @@ const CountriesApiServices = {
   list: document.querySelector(".country-list"),
   info: document.querySelector(".country-info"),
   countryMarkUp(countries) {
-    return (CountriesApiServices.info.innerHTML = countryTpl(countries));
+    return (this.info.innerHTML = countryTpl(countries));
   },
   // делаем разметку для одной странны
   countriesMarkUp(countries) {
-    return (CountriesApiServices.list.innerHTML = countriesTpl(countries));
+    return (this.list.innerHTML = countriesTpl(countries));
   },
   // делаем разметку для кучи стран
   clearInfo() {
